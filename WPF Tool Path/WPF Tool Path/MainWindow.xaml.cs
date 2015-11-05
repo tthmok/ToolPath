@@ -60,6 +60,8 @@ namespace WPF_Tool_Path
 
         private void RfidReader_Attach(object sender, AttachEventArgs e)
         {
+            rfidReader.Antenna = true;
+
             Console.WriteLine("RfidReader_Attach");
             // event for when a tag is found
             rfidReader.Tag += RfidReader_Tag; ;
@@ -112,6 +114,13 @@ namespace WPF_Tool_Path
                     double normalRot = e.Value / 1000f;
                     servoMotor.Position = CosineInterpolate(servoMotor.PositionMin, servoMotor.PositionMax, normalRot);
                     Console.WriteLine("new servo position: " + servoMotor.Position);
+
+                    // Create a message and populate it
+                    Message message = new Message("SERVO_POSITION");
+                    message.AddField<double>("position", servoMotor.Position);
+
+                    // Send the message
+                    client.SendMessage(message);
                 }
             }
         }

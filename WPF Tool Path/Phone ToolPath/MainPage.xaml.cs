@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Diagnostics;
 
 using NetworkIt;
 
@@ -24,11 +25,47 @@ namespace Phone_ToolPath
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        Client client;
+        string username = "some_user_name"; // use your name or nickname here
+        string address = "581.cpsc.ucalgary.ca";
+        int port = 8000;
+
         public MainPage()
         {
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
+
+            client = new Client(username, address, port);
+
+            client.Connected += Client_Connected;
+            client.Error += Client_Error;
+            client.MessageReceived += Client_MessageReceived;
+        }
+
+        async private void Client_MessageReceived(object sender, NetworkItMessageEventArgs e)
+        {
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                Debug.WriteLine("Client_MessageReceived: " + e.ReceivedMessage.Name);
+                if (e.ReceivedMessage.Name == "RFID_TAG")
+                {
+                    TagLabel.Text = e.ReceivedMessage.GetField("rfidTag");
+                } else if (e.ReceivedMessage.Name == "SERVO_POSITION")
+                {
+
+                }// Update your UI objects here (e.g. sliders, ellipses, etc.)    
+            });
+        }
+
+        private void Client_Error(object sender, EventArgs e)
+        {
+            throw new Exception();
+        }
+
+        private void Client_Connected(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Connected to server");
         }
 
         /// <summary>
