@@ -25,7 +25,7 @@ namespace WPF_Tool_Path
     public partial class MainWindow : Window
     {
         Client client;
-        string username = "some_user_name";
+        string username = "totally_a_name";
         string address = "581.cpsc.ucalgary.ca";
         int port = 8000;
 
@@ -118,6 +118,8 @@ namespace WPF_Tool_Path
                     // Create a message and populate it
                     Message message = new Message("SERVO_POSITION");
                     message.AddField<double>("position", servoMotor.Position);
+                    message.AddField<double>("positionMin", servoMotor.PositionMin);
+                    message.AddField<double>("positionMax", servoMotor.PositionMax);
 
                     // Send the message
                     client.SendMessage(message);

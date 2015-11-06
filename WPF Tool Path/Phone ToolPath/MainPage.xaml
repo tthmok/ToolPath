@@ -8,8 +8,37 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid x:Name="Container">
-        <TextBlock x:Name="TagLabel" HorizontalAlignment="Left" Margin="10,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="78" Width="380" FontSize="64"/>
+    <Canvas x:Name="Container" Background="White">
+        <Canvas x:Name="HxScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White">
+            <Button x:Name="MeasureButton_Hx" HorizontalAlignment="Stretch" Canvas.Left="10" Canvas.Top="535.083" VerticalAlignment="Stretch" Width="380" Height="104" Background="White" BorderThickness="2.5" BorderBrush="#FF00B9FF">
+                <Image x:Name="image1" Height="107" Width="301" Source="Assets/caliper.jpg"/>
+            </Button>
+            <Image x:Name="arm_xray" Height="370" Width="380" Source="arm-xray.jpg" Canvas.Left="10" Canvas.Top="135"/>
+            <TextBlock x:Name="NameLabel_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="John Doe" Height="78" Width="380" FontSize="64" Canvas.Top="92" Canvas.Left="10" Foreground="#FF4DBF52"/>
+        </Canvas>
 
-    </Grid>
+        <Canvas x:Name="MeasureScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White">
+            <TextBlock x:Name="CaliperMeasure" HorizontalAlignment="Left" TextWrapping="Wrap" Text="********mm" Height="78" Width="380" FontSize="64" Canvas.Top="10" Canvas.Left="10" Foreground="#FF4DBF52"/>
+            <Button x:Name="SaveButton" Content="SAVE" HorizontalAlignment="Stretch" Canvas.Left="10" Canvas.Top="507" VerticalAlignment="Stretch" Width="230" FontSize="64" Foreground="#FF00DCFF" Background="#FFBEFFBB"/>
+            <Image x:Name="BodyImage" Height="381" Width="380" Canvas.Left="10" Canvas.Top="131" Source="Assets/bodyicon.png"/>
+            <Button x:Name="GoToHxButton" Content="Hx" HorizontalAlignment="Stretch" Canvas.Left="281" Canvas.Top="507" VerticalAlignment="Stretch" Width="98" FontSize="64" Foreground="#FF00DCFF" Background="#FF0C5F1F"/>
+        </Canvas>
+
+        <Canvas x:Name="RFIDScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White">
+            <TextBlock x:Name="TagLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" Height="78" Width="380" FontSize="64" Canvas.Left="10" Canvas.Top="76" Foreground="Black"/>
+            <TextBlock x:Name="NameLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="John Doe" Height="78" Width="380" FontSize="64" Canvas.Top="180" Canvas.Left="10" Foreground="#FF4DBF52"/>
+            <TextBlock x:Name="AgeLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Age: 78" Height="78" Width="380" FontSize="64" Canvas.Top="258" Canvas.Left="10" Foreground="#FF4DBF52"/>
+            <TextBlock x:Name="GenderLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Male" Height="78" Width="380" FontSize="64" Canvas.Top="336" Canvas.Left="10" Foreground="#FF4DBF52"/>
+            <TextBlock x:Name="HeightLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="177.8 cm" Height="78" Width="380" FontSize="64" Canvas.Top="414" Canvas.Left="10" Foreground="#FF4DBF52"/>
+            <Button x:Name="MeasureButton" HorizontalAlignment="Stretch" Canvas.Left="10" Canvas.Top="535" VerticalAlignment="Stretch" Width="380" Height="104" Background="White" BorderThickness="2.5" BorderBrush="#FF00B9FF">
+                <Image x:Name="image" Height="107" Width="301" Source="Assets/caliper.jpg"/>
+            </Button>
+        </Canvas>
+        <Canvas x:Name="LaunchScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White">
+            <TextBlock x:Name="Title" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ToolPath" Height="78" Width="380" FontSize="64" Canvas.Left="10" Canvas.Top="76" Foreground="Black"/>
+            <Image x:Name="caliper" Height="394" Canvas.Left="50" Canvas.Top="180" Width="313" Source="Assets/caliper.jpg" d:IsHidden="True"/>
+            <Image x:Name="bracelet" Height="394" Canvas.Left="50" Canvas.Top="76" Width="313" Source="Assets/bracelet.jpg"/>
+        </Canvas>
+
+    </Canvas>
 </Page>
