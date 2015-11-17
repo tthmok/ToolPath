@@ -103,7 +103,6 @@ namespace Phone_ToolPath
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                Debug.WriteLine("Client_MessageReceived: " + e.ReceivedMessage.Name);
                 if (e.ReceivedMessage.Name == "RFID_TAG")
                 {
                     LaunchScreen.Visibility = Visibility.Collapsed;
@@ -118,8 +117,9 @@ namespace Phone_ToolPath
                     double servoPositionMin = Double.Parse(e.ReceivedMessage.GetField("positionMin"));
                     double servoPositionMax = Double.Parse(e.ReceivedMessage.GetField("positionMax"));
 
-                    // hack caliper measure between 0-40mm
-                    CaliperMeasure.Text = CosineInterpolate(40.0, 0.0, (servoPosition/(servoPositionMax-servoPositionMin))).ToString() + "mm";
+                    // hack caliper measure between 0-60mm
+                    CaliperMeasure.Text = string.Format("{0:0.0}", CosineInterpolate(60.0, 0.0, (servoPosition/(servoPositionMax-servoPositionMin)))) + "mm";
+                    Debug.WriteLine("CaliperMeasure.Text: " + CaliperMeasure.Text);
                 }// Update your UI objects here (e.g. sliders, ellipses, etc.)    
             });
         }

@@ -9,35 +9,48 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Canvas x:Name="Container" Background="White">
-        <Canvas x:Name="HxScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White">
+        <Canvas x:Name="HxScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White" d:IsHidden="True">
             <Button x:Name="MeasureButton_Hx" HorizontalAlignment="Stretch" Canvas.Left="10" Canvas.Top="535.083" VerticalAlignment="Stretch" Width="380" Height="104" Background="White" BorderThickness="2.5" BorderBrush="#FF00B9FF">
                 <Image x:Name="image1" Height="107" Width="301" Source="Assets/caliper.jpg"/>
             </Button>
             <Image x:Name="arm_xray" Height="370" Width="380" Source="arm-xray.jpg" Canvas.Left="10" Canvas.Top="135"/>
-            <TextBlock x:Name="NameLabel_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="John Doe" Height="78" Width="380" FontSize="64" Canvas.Top="92" Canvas.Left="10" Foreground="#FF4DBF52"/>
+            <TextBlock x:Name="NameLabel_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="John Doe" Height="78" Width="380" FontSize="64" Canvas.Top="10" Canvas.Left="10" Foreground="#FF070E07"/>
         </Canvas>
 
         <Canvas x:Name="MeasureScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White">
-            <TextBlock x:Name="CaliperMeasure" HorizontalAlignment="Left" TextWrapping="Wrap" Text="********mm" Height="78" Width="380" FontSize="64" Canvas.Top="10" Canvas.Left="10" Foreground="#FF4DBF52"/>
-            <Button x:Name="SaveButton" Content="SAVE" HorizontalAlignment="Stretch" Canvas.Left="10" Canvas.Top="507" VerticalAlignment="Stretch" Width="230" FontSize="64" Foreground="#FF00DCFF" Background="#FFBEFFBB"/>
-            <Image x:Name="BodyImage" Height="381" Width="380" Canvas.Left="10" Canvas.Top="131" Source="Assets/bodyicon.png"/>
-            <Button x:Name="GoToHxButton" Content="Hx" HorizontalAlignment="Stretch" Canvas.Left="281" Canvas.Top="507" VerticalAlignment="Stretch" Width="98" FontSize="64" Foreground="#FF00DCFF" Background="#FF0C5F1F"/>
+            <Rectangle Fill="Black" Height="19" Stroke="Black" Width="400" Canvas.Top="624"/>
+            <Rectangle Fill="Black" Height="88" Stroke="Black" Width="400"/>
+            <TextBlock x:Name="CaliperMeasure" HorizontalAlignment="Right" TextWrapping="Wrap" Text="********mm" Height="78" Width="380" FontSize="64" Canvas.Top="10" Canvas.Left="10" Foreground="White" TextAlignment="Right"/>
+            <Button x:Name="SaveButton" Content="SAVE" HorizontalAlignment="Stretch" Canvas.Left="10" Canvas.Top="507" VerticalAlignment="Stretch" Width="230" FontSize="64" Foreground="White" Background="#FF00DCFF"/>
+            <Image x:Name="BodyImage" Height="381" Width="199" Canvas.Left="103" Canvas.Top="115" Source="Assets/bodyicon.png"/>
+            <Button x:Name="GoToHxButton" Content="Hx" HorizontalAlignment="Stretch" Canvas.Left="281" Canvas.Top="507" VerticalAlignment="Stretch" Width="98" FontSize="64" Foreground="White" Background="#FF00DCFF"/>
         </Canvas>
 
-        <Canvas x:Name="RFIDScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White">
+        <Canvas x:Name="RFIDScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White" d:IsHidden="True">
             <TextBlock x:Name="TagLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" Height="78" Width="380" FontSize="64" Canvas.Left="10" Canvas.Top="76" Foreground="Black"/>
-            <TextBlock x:Name="NameLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="John Doe" Height="78" Width="380" FontSize="64" Canvas.Top="180" Canvas.Left="10" Foreground="#FF4DBF52"/>
-            <TextBlock x:Name="AgeLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Age: 78" Height="78" Width="380" FontSize="64" Canvas.Top="258" Canvas.Left="10" Foreground="#FF4DBF52"/>
-            <TextBlock x:Name="GenderLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Male" Height="78" Width="380" FontSize="64" Canvas.Top="336" Canvas.Left="10" Foreground="#FF4DBF52"/>
-            <TextBlock x:Name="HeightLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="177.8 cm" Height="78" Width="380" FontSize="64" Canvas.Top="414" Canvas.Left="10" Foreground="#FF4DBF52"/>
+            <TextBlock x:Name="NameLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="John Doe" Height="78" Width="380" FontSize="64" Canvas.Top="180" Canvas.Left="10" Foreground="Black"/>
+            <TextBlock x:Name="AgeLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Age: 78" Height="78" Width="380" FontSize="64" Canvas.Top="258" Canvas.Left="10" Foreground="Black"/>
+            <TextBlock x:Name="GenderLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Male" Height="78" Width="380" FontSize="64" Canvas.Top="336" Canvas.Left="10" Foreground="Black"/>
+            <TextBlock x:Name="HeightLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="177.8 cm" Height="78" Width="380" FontSize="64" Canvas.Top="414" Canvas.Left="10" Foreground="Black"/>
             <Button x:Name="MeasureButton" HorizontalAlignment="Stretch" Canvas.Left="10" Canvas.Top="535" VerticalAlignment="Stretch" Width="380" Height="104" Background="White" BorderThickness="2.5" BorderBrush="#FF00B9FF">
                 <Image x:Name="image" Height="107" Width="301" Source="Assets/caliper.jpg"/>
             </Button>
         </Canvas>
-        <Canvas x:Name="LaunchScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White">
-            <TextBlock x:Name="Title" HorizontalAlignment="Center" TextWrapping="Wrap" Text="ToolPath" Height="78" Width="380" FontSize="64" Canvas.Left="10" Canvas.Top="76" Foreground="Black"/>
-            <Image x:Name="caliper" Height="394" Canvas.Left="50" Canvas.Top="180" Width="313" Source="Assets/caliper.jpg" d:IsHidden="True"/>
-            <Image x:Name="bracelet" Height="394" Canvas.Left="50" Canvas.Top="76" Width="313" Source="Assets/bracelet.jpg"/>
+        <Canvas x:Name="LaunchScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White" d:IsHidden="True">
+            <Canvas x:Name="TitleStuff" Height="615" Canvas.Left="-108" Canvas.Top="15" Width="538">
+                <Image x:Name="caliper" Height="394" Width="340" Source="Assets/caliper.jpg" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                    <Image.RenderTransform>
+                        <CompositeTransform Rotation="-270"/>
+                    </Image.RenderTransform>
+                </Image>
+                <Rectangle x:Name="titleback" Fill="#FFB299E8" Height="78" Canvas.Left="173" Stroke="#00000000" Canvas.Top="20" Width="335"/>
+                <Image x:Name="bracelet" Height="194" Canvas.Left="158" Canvas.Top="343" Width="303" Source="Assets/Industry-Rfid-Sensor-icon.png"/>
+                <TextBlock x:Name="ScanText" TextWrapping="Wrap" Text="Scan RFID" Height="78" Width="303" FontSize="64" Canvas.Left="173" Canvas.Top="537" Foreground="Black" FontFamily="Segoe UI Semibold"/>
+                <Rectangle x:Name="caliperback" Fill="#FF858585" Height="138" Canvas.Left="158" Stroke="#00000000" Canvas.Top="20" Width="34"/>
+                <TextBlock x:Name="Title" TextWrapping="Wrap" Text="ToolPath" Height="78" Width="380" FontSize="64" Canvas.Left="158" Canvas.Top="20" FontFamily="Segoe UI Semibold" Foreground="Black"/>
+                <Rectangle x:Name="caliperback1" Fill="White" Height="224" Canvas.Left="155" Stroke="#00000000" Canvas.Top="140" Width="45"/>
+                <Rectangle x:Name="caliperback2" Fill="White" Height="224" Canvas.Left="192" Stroke="#00000000" Canvas.Top="96" Width="45"/>
+            </Canvas>
         </Canvas>
 
     </Canvas>

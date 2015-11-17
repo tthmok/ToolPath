@@ -94,11 +94,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="arm-xray.jpg" />
-    <Content Include="Assets\bodyicon.png" />
+    <Content Include="Assets\bodyicon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\bracelet.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\caliper.jpg" />
+    <Content Include="Assets\caliper.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Industry-Rfid-Sensor-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Logo.scale-240.png" />
     <Content Include="Assets\SmallLogo.scale-240.png" />
     <Content Include="Assets\SplashScreen.scale-240.png" />
