@@ -9,6 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Canvas x:Name="Container" Background="White">
+
         <Canvas x:Name="HxScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White" d:IsHidden="True">
             <Button x:Name="MeasureButton_Hx" HorizontalAlignment="Stretch" Canvas.Left="10" Canvas.Top="535.083" VerticalAlignment="Stretch" Width="380" Height="104" Background="White" BorderThickness="2.5" BorderBrush="#FF00B9FF">
                 <Image x:Name="image1" Height="107" Width="301" Source="Assets/caliper.jpg"/>
@@ -26,12 +27,15 @@
             <Button x:Name="GoToHxButton" Content="Hx" HorizontalAlignment="Stretch" Canvas.Left="281" Canvas.Top="507" VerticalAlignment="Stretch" Width="98" FontSize="64" Foreground="White" Background="#FF00DCFF"/>
         </Canvas>
 
-        <Canvas x:Name="RFIDScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White" d:IsHidden="True">
+        <Canvas x:Name="RFIDScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White">
+
+            <Rectangle Fill="Black" Height="75" Stroke="Black" Width="400" Canvas.Top="62"/>
+
             <TextBlock x:Name="TagLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" Height="78" Width="380" FontSize="64" Canvas.Left="10" Canvas.Top="76" Foreground="Black"/>
-            <TextBlock x:Name="NameLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="John Doe" Height="78" Width="380" FontSize="64" Canvas.Top="180" Canvas.Left="10" Foreground="Black"/>
-            <TextBlock x:Name="AgeLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Age: 78" Height="78" Width="380" FontSize="64" Canvas.Top="258" Canvas.Left="10" Foreground="Black"/>
-            <TextBlock x:Name="GenderLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Male" Height="78" Width="380" FontSize="64" Canvas.Top="336" Canvas.Left="10" Foreground="Black"/>
-            <TextBlock x:Name="HeightLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="177.8 cm" Height="78" Width="380" FontSize="64" Canvas.Top="414" Canvas.Left="10" Foreground="Black"/>
+            <TextBlock x:Name="NameLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="John Doe" Height="78" Width="380" FontSize="64" Canvas.Top="64" Canvas.Left="10" Foreground="White"/>
+            <TextBlock x:Name="AgeLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Age: 78" Height="78" Width="380" FontSize="64" Canvas.Top="142" Canvas.Left="10" Foreground="Black"/>
+            <TextBlock x:Name="GenderLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Male" Height="78" Width="380" FontSize="64" Canvas.Top="220" Canvas.Left="10" Foreground="Black"/>
+            <TextBlock x:Name="HeightLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="177.8 cm" Height="78" Width="380" FontSize="64" Canvas.Top="298" Canvas.Left="10" Foreground="Black"/>
             <Button x:Name="MeasureButton" HorizontalAlignment="Stretch" Canvas.Left="10" Canvas.Top="535" VerticalAlignment="Stretch" Width="380" Height="104" Background="White" BorderThickness="2.5" BorderBrush="#FF00B9FF">
                 <Image x:Name="image" Height="107" Width="301" Source="Assets/caliper.jpg"/>
             </Button>
