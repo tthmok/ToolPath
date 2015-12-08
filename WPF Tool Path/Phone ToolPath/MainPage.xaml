@@ -40,7 +40,7 @@
                 <Image x:Name="image" Height="107" Width="301" Source="Assets/caliper.jpg"/>
             </Button>
         </Canvas>
-        <Canvas x:Name="LaunchScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White" d:IsHidden="True">
+        <Canvas x:Name="LaunchScreen" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="400" Background="White">
             <Canvas x:Name="TitleStuff" Height="615" Canvas.Left="-108" Canvas.Top="15" Width="538">
                 <Image x:Name="caliper" Height="394" Width="340" Source="Assets/caliper.jpg" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
                     <Image.RenderTransform>
@@ -53,7 +53,7 @@
                 <Rectangle x:Name="caliperback" Fill="#FF858585" Height="138" Canvas.Left="158" Stroke="#00000000" Canvas.Top="20" Width="34"/>
                 <TextBlock x:Name="Title" TextWrapping="Wrap" Text="ToolPath" Height="78" Width="380" FontSize="64" Canvas.Left="158" Canvas.Top="20" FontFamily="Segoe UI Semibold" Foreground="Black"/>
                 <Rectangle x:Name="caliperback1" Fill="White" Height="224" Canvas.Left="155" Stroke="#00000000" Canvas.Top="140" Width="45"/>
-                <Rectangle x:Name="caliperback2" Fill="White" Height="224" Canvas.Left="192" Stroke="#00000000" Canvas.Top="96" Width="45"/>
+                <Rectangle x:Name="caliperback2" Fill="White" Height="224" Canvas.Left="192" Stroke="#00000000" Canvas.Top="95" Width="316"/>
             </Canvas>
         </Canvas>
 

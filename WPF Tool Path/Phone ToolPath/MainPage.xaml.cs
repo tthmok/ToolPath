@@ -36,6 +36,7 @@ namespace Phone_ToolPath
 
         public MainPage()
         {
+            Debug.WriteLine("Phone MainPage");
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
@@ -50,6 +51,9 @@ namespace Phone_ToolPath
             MeasureButton_Hx.Click += MeasureButton_Hx_Click;
             GoToHxButton.Click += GoToHxButton_Click;
 
+            // manual rfid button
+            ScanText.PointerReleased += ScanText_PointerReleased;
+
             touchPoint = new Ellipse()
             {
                 Width = 25,
@@ -61,6 +65,19 @@ namespace Phone_ToolPath
 
             Container.Children.Add(touchPoint);
             Container.PointerReleased += Container_PointerReleased;
+
+            Debug.WriteLine("Phone MainPage End");
+        }
+
+        void ScanText_PointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            ScanText.PointerReleased -= ScanText_PointerReleased;
+
+            LaunchScreen.Visibility = Visibility.Collapsed;
+            MeasureScreen.Visibility = Visibility.Collapsed;
+
+            RFIDScreen.Visibility = Visibility.Visible;
+            TagLabel.Text = "018948ngio93h";
         }
 
         private void GoToHxButton_Click(object sender, RoutedEventArgs e)
